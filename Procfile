@@ -1,1 +1,1 @@
-web: gunicorn cad_tips.wsgi
+web: gunicorn cad-tips.wsgi
