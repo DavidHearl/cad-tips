@@ -1,4 +1,3 @@
-from webbrowser import get
 from django.shortcuts import render, get_object_or_404
 from .models import Post
 
@@ -15,4 +14,4 @@ def post_detail(request, year, month, day, post):
         publish__month=month,
         publish__day=day
     )
-    return render(request,'blog/post/deail.html',{'post': post})
+    return render(request, 'blog/post/deail.html', {'post': post})

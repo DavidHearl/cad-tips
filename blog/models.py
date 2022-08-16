@@ -3,11 +3,16 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
+
 class PublishedManager(models.Manager):
     def get_queryset(self):
-        return super(PublishedManager, self.get_queryset().filter(status='published'))
+        return super(PublishedManager, self).get_queryset().filter(status='published')
+
 
 class Post(models.Model):
+    objects = models.Manager()
+    published = PublishedManager()
+
     def get_absolute_urls(self):
         return reverse('blog:post_detail',
             args=[
