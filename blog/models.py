@@ -1,7 +1,7 @@
-from audioop import reverse
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class PublishedManager(models.Manager):
@@ -10,12 +10,9 @@ class PublishedManager(models.Manager):
 
 
 class Post(models.Model):
-    objects = models.Manager()
-    published = PublishedManager()
 
-    def get_absolute_urls(self):
-        return reverse('blog:post_detail',
-            args=[
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', args=[
                 self.publish.year,
                 self.publish.month,
                 self.publish.day, 
@@ -23,10 +20,14 @@ class Post(models.Model):
             ]
         )
 
+    objects = models.Manager()
+    published = PublishedManager()
+
     STATUS_CHOICES = (
         ('draft', 'Draft'),
         ('published', 'Published'),
     )
+
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, unique_for_date='publish')
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
