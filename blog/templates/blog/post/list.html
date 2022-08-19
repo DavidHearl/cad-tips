@@ -5,17 +5,19 @@
 {% block content %}
 
     <h1>CAD Tips</h1>
-    <hr>
     {% for post in posts %}
-        <h2>
-            <a href="{{ post.get_absolute_url }}">
-                {{ post.title }}
-            </a>
-        </h2>
-        <p class="date">
-            Published {{ post.publish }} by {{ post.author }}
-        </p>
-        {{ post.body|truncatewords:30|linebreaks }}
+        <div class="post-preview">
+            <h2>
+                <a href="{{ post.get_absolute_url }}">
+                    {{ post.title }}
+                </a>
+            </h2>
+            <p class="date">
+                Published {{ post.publish }} by {{ post.author }}
+            </p>
+            {{ post.body|truncatewords:30|linebreaks }}
+        </div>
+        
     {% endfor %}
     
     {% include "pagination.html" with page=posts %}

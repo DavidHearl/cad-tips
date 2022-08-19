@@ -1,0 +1,46 @@
+body { 
+    margin:0;
+    padding:0;
+    font-family:helvetica, sans-serif;
+}
+
+.post-preview {
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+a { 
+    color:black;
+    text-decoration:none; 
+}
+
+h1 { 
+    border-bottom:1px solid #bbb;
+}
+
+h2 {
+    font-weight:normal;
+}
+
+#content { 
+    float:left;
+    width:60%;
+}
+
+#sidebar { 
+    float:right;
+    width:30%;
+    background:#efefef; 
+    height:100%;
+}
+
+p.date { 
+    color:#aaa;
+    font-family: georgia, serif;
+    font-size: 12px;
+    font-style: italic; 
+}
+
+.pagination { 
+    font-weight:bold;
+}
