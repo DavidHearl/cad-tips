@@ -1,22 +1,20 @@
 from multiprocessing import context
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth import authenticate, login
+
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Post, Comment
-from .forms import EmailPostForm, CommentForm
+from django.urls import is_valid_path
 from django.views.generic import ListView
 from django.core.mail import send_mail
 
-
-class PostListView(ListView):
-    queryset = Post.published
-    context_object_name = 'posts'
-    paginate_by = 3
-    template_name = 'blog/post/list.html'
+from .forms import EmailPostForm, CommentForm, LoginForm
+from .models import Post, Comment
 
 
 def post_list(request):
     object_list = Post.published.all()
-    paginator = Paginator(object_list, 3)
+    paginator = Paginator(object_list, 6)
     page = request.GET.get('page')
     try:
         posts = paginator.page(page)
@@ -30,7 +28,7 @@ def post_list(request):
         'posts': posts
     }
 
-    return render(request, 'blog/post/list.html', context)
+    return render(request, 'blog/list.html', context)
 
 
 def post_detail(request, year, month, day, post):
@@ -55,7 +53,7 @@ def post_detail(request, year, month, day, post):
         'comment_form': comment_form
     }
 
-    return render(request, 'blog/post/detail.html', context)
+    return render(request, 'blog/detail.html', context)
 
 
 def post_share(request, post_id):
@@ -81,5 +79,25 @@ def post_share(request, post_id):
         'sent': sent
     }
 
-    return render(request, 'blog/post/share.html', context)
+    return render(request, 'blog/share.html', context)
+
+
+def user_login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            user = authenticate(request, username=cd['username'], password=cd['password'])
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return HttpResponse('Authenticated successfully')
+                else:
+                    return HttpResponse('Disabled Account')
+            else:
+                return HttpResponse('Incorrect Login Details')
+    else:
+        form = LoginForm()
+        
+    return render(request, 'account/login.html', {'form': form})
 
