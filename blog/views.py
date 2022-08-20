@@ -2,6 +2,7 @@ from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.urls import is_valid_path
@@ -100,4 +101,9 @@ def user_login(request):
         form = LoginForm()
         
     return render(request, 'account/login.html', {'form': form})
+
+
+@login_required
+def dashboard(request):
+    return render(request, 'account/dashboard.html', {'section': 'dashboard'})
 

@@ -142,7 +142,6 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_HOST_USER = os.environ.get("EMAIL_USER")
@@ -150,3 +149,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # EMAIL_PORT = 587
 # EMAIL_USE_TLS = True
+
+LOGIN_REDIRECT_URL = 'blog:dashboard'
+LOGIN_URL = 'blog:login'
+LOGOUT_URL = 'blog:logout'
+
+
