@@ -22,18 +22,6 @@ h2 {
     font-weight:normal;
 }
 
-#content { 
-    float:left;
-    width:60%;
-}
-
-#sidebar { 
-    float:right;
-    width:30%;
-    background:#efefef; 
-    height:100%;
-}
-
 p.date { 
     color:#aaa;
     font-family: georgia, serif;

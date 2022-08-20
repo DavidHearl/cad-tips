@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Post, Comment
@@ -24,7 +25,12 @@ def post_list(request):
     except EmptyPage:
         posts = Paginator.page(paginator.num_pages)
 
-    return render(request, 'blog/post/list.html', {'page': page, 'posts': posts})
+    context = {
+        'page': page,
+        'posts': posts
+    }
+
+    return render(request, 'blog/post/list.html', context)
 
 
 def post_detail(request, year, month, day, post):
@@ -42,13 +48,14 @@ def post_detail(request, year, month, day, post):
         else:
             comment_form = CommentForm()
 
-    return render(request, 'blog/post/detail.html', 
-        {
-            'post': post,
-            'comments': comments,
-            'new_comment': new_comment,
-            'comment_form': comment_form
-        })
+    context = {
+        'post': post,
+        'comments': comments,
+        'new_comment': new_comment,
+        'comment_form': comment_form
+    }
+
+    return render(request, 'blog/post/detail.html', context)
 
 
 def post_share(request, post_id):
@@ -68,5 +75,11 @@ def post_share(request, post_id):
     else:
         form = EmailPostForm()
 
-    return render(request, 'blog/post/share.html', {'post': post, 'form': form, 'sent': sent})
+    context = {
+        'post': post,
+        'form': form,
+        'sent': sent
+    }
+
+    return render(request, 'blog/post/share.html', context)
 
