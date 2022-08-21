@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Log-in{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
 	<h1>Log-in</h1>
@@ -10,7 +10,7 @@
 		Please try again.
 		</p>
 	{% else %}
-		<p>Please, use the following form to log-in. If you don't have an account <a href="">register here</a></p>
+		<p>Please, use the following form to login. If you don't have an account <a href="{% url 'blog:register' %}">register here</a></p>
 	{% endif %}
 	<div class="login-form">
 		<form action="{% url 'blog:login' %}" method="post">

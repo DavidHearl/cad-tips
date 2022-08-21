@@ -35,12 +35,14 @@
     {% if new_comment %}
         <h2>Your comment has been added.</h2>
     {% else %}
+        {% if user.is_authenticated %}
         <h2>Add a Comment</h2>
         <form method="post">
             {{ comment_form.as_p }}
             {% csrf_token %}
             <p><input type="submit" value="Add comment"></p>
         </form>
+        {% endif %}
     {% endif %}
 
 {% endblock %}
