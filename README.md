@@ -6,6 +6,7 @@
 - pip3 install dj3-cloudinary-storage
 - pip3 install gunicorn
 - pip3 install Pillow
+- pip3 install django-summernote
 
 ## User Stories
 ---
