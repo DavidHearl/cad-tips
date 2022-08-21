@@ -1,20 +1,7 @@
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(15, 19, 25);
+    background-color: rgb(20, 24, 30);
     color: #ddd;
-}
-
-/* Global */
-.center{
-    text-align: center;
-}
-
-.alert{
-    text-align: center;
-}
-
-.label{
-    margin: 40px 0;
 }
 
 /* ----- Navigation ----- */
@@ -26,6 +13,7 @@ body{
 .navbar{
     background-color: rgb(10,15,20);
     border-bottom: 1px solid rgb(50,55,60);
+    padding-bottom: 6px;
 }
 
 .nav-link{
@@ -36,10 +24,43 @@ body{
     flex-grow: 0;
 }
 
-.post-preview {
-    border: 1px solid black;
-    margin-bottom: 10px;
+/* Cards */
+
+.card {
+    margin-bottom: 20px;
+    color: white;
+    border: 1px solid rgb(106, 106, 106);
 }
+
+.post-title {
+    margin: 0;
+    font-size: 16px;
+}
+
+.card-header {
+    padding-left: 12px;
+    padding-bottom: 7px;
+    background-color: rgb(10,15,20);
+}
+
+.card-body{
+    padding: 12px;
+    background-color: rgb(30, 34, 40);
+}
+
+p {
+    margin-bottom: 8px;
+}
+
+p.date { 
+    color:#aaa;
+    font-family: georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+/* Extra */
 
 .comment {
     border: 1px solid black;
@@ -47,7 +68,7 @@ body{
 }
 
 a { 
-    color:black;
+    color:rgb(180, 113, 113);
     text-decoration:none; 
 }
 
@@ -55,13 +76,4 @@ h2 {
     font-weight:normal;
 }
 
-p.date { 
-    color:#aaa;
-    font-family: georgia, serif;
-    font-size: 12px;
-    font-style: italic; 
-}
 
-.pagination { 
-    font-weight:bold;
-}

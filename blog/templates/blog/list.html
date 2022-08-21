@@ -5,19 +5,21 @@
 {% block content %}
 
     <h1>Posts</h1>
+
     {% for post in posts %}
-        <div class="post-preview">
-            <h2>
-                <a href="{{ post.get_absolute_url }}">
-                    {{ post.title }}
-                </a>
-            </h2>
-            <p class="date">
-                Published {{ post.publish }} by {{ post.author }}
-            </p>
-            {{ post.body|truncatewords:30|linebreaks }}
+        <div class="col-12 col-md-6 content">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="post-title">{{ post.title }}</h3>
+                </div>
+                <div class="card-body">
+                    <!-- <h5 class="card-title">Special title treatment</h5> -->
+                    <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
+                    <p class="card-text">{{ post.body|truncatewords:30|linebreaks }}</p>
+                    <a href="{{ post.get_absolute_url }}" class="btn btn-primary btn-sm">Read Article</a>
+                </div>
+            </div>         
         </div>
-        
     {% endfor %}
     
     {% include "pagination.html" with page=posts %}
