@@ -17,7 +17,7 @@
     </p>
 
     {% with comments.count as total_comments %}
-        <h2>
+        <h2 class="comment-title">
             <i class="far fa-comments"></i>
             {{ total_comments }} Comment{{ total_comments|pluralize }}
         </h2>
@@ -38,14 +38,13 @@
 
     <!-- Add a new comment -->
     {% if new_comment %}
-        <h2>Your comment has been added.</h2>
+        <p>Your comment has been added.</p>
     {% else %}
         {% if user.is_authenticated %}
-        <h2>Add a Comment</h2>
-        <form method="post">
+        <form class="add-comment-form" method="post">
             {{ comment_form.as_p }}
             {% csrf_token %}
-            <p><input type="submit" value="Add comment"></p>
+            <input class="add-comment" type="submit" value="Add comment">
         </form>
         {% endif %}
     {% endif %}
