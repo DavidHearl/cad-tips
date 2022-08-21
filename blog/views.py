@@ -1,12 +1,12 @@
-from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.urls import is_valid_path
 from django.core.mail import send_mail
+from django.urls import is_valid_path
 
 from .forms import EmailPostForm, CommentForm, LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
 from .models import Post, Comment ,Profile
