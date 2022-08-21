@@ -5,6 +5,7 @@
 - pip3 install psycopg2-binary
 - pip3 install dj3-cloudinary-storage
 - pip3 install gunicorn
+- pip3 install Pillow
 
 ## Issues
 
@@ -16,29 +17,29 @@ Google sometimes blocks the ability to log into google with a 3rd part applicati
 | Number | Marking Criteria | Met |
 |:-:|:----------|:---:|
 |1.1|Design a Front-End for a data-driven web application that meets accessibility guidelines, follows the principles of UX design, meets its given purpose and provides a set of user interactions.||
-|1.2|Implement custom HTML and CSS code to create a responsive Full-Stack application consisting of one or more HTML pages with relevant responses to user actions and a set of data manipulation functions||
-|1.3|Build a database-backed MVC web application that allows users to store and manipulate data records about a particular domain.||
-|1.4|Design a database structure relevant for your domain, consisting of a minimum of one custom model.||
+|1.2|Implement custom HTML and CSS code to create a responsive Full-Stack application consisting of one or more HTML pages with relevant responses to user actions and a set of data manipulation functions|x|
+|1.3|Build a database-backed MVC web application that allows users to store and manipulate data records about a particular domain.|x|
+|1.4|Design a database structure relevant for your domain, consisting of a minimum of one custom model.|x|
 |1.5|Use an Agile tool to manage the planning and implementation of all significant functionality||
 |1.6|Document and implement all User Stories and map them to the project within an Agile tool||
 |1.7|Write Python code that is consistent in style and conforms to the PEP8 style guide and validated HTML and CSS code.||
-|1.8|Include sufficient custom Python logic to demonstrate your proficiency in the language||
-|1.9|Include functions with compound statements such as if conditions and/or loops in your Python code||
-|1.10|Write code that meets minimum standards for readability (comments, indentation, consistent and meaningful naming conventions).||
-|1.11|Name files consistently and descriptively, without spaces or capitalisation to allow for cross-platform compatibility.||
+|1.8|Include sufficient custom Python logic to demonstrate your proficiency in the language|x|
+|1.9|Include functions with compound statements such as if conditions and/or loops in your Python code|x|
+|1.10|Write code that meets minimum standards for readability (comments, indentation, consistent and meaningful naming conventions).|x|
+|1.11|Name files consistently and descriptively, without spaces or capitalisation to allow for cross-platform compatibility.|x|
 |1.12|Document and implement all User Stories within the Agile tool and map them to the project goals||
 |1.13|Document the UX design work undertaken for this project, including any wireframes, mockups, diagrams, etc.,created as part of the design process and its reasoning. Include diagrams created as part of the design process and demonstrate that these have been followed through to implementation||
-|2.1|Develop the model into a usable database where data is stored in a consistent and well-organised manner.||
+|2.1|Develop the model into a usable database where data is stored in a consistent and well-organised manner.|x|
 |2.2|Create functionality for users to create, locate, display, edit and delete records||
 |2.3|All changes to the data should be notified to relevant user||
 |2.4|Implement at least one form, with validation, that allows users to create and edit models in the backend||
-|3.1|Apply role-based login and registration functionality||
-|3.2|The current login state is reflected to the user||
-|3.3|Users should not be permitted to access restricted content or functionality prior to role-based login.||
+|3.1|Apply role-based login and registration functionality|x|
+|3.2|The current login state is reflected to the user|x|
+|3.3|Users should not be permitted to access restricted content or functionality prior to role-based login.|x|
 |4.1|Design and implement manual and/or automated Python test procedures to assess functionality, usability, responsiveness and data management within the entire web application||
 |4.2|Design and implement manual and/or automated JavaScript test procedures to assess functionality,usability, responsiveness and data management within the entire web application||
 |4.3|Document all implemented testing in the README.||
-|5.1|Use Git & GitHub for version control of a Full-Stack web application up to deployment, using commit messages to document the development process.||
+|5.1|Use Git & GitHub for version control of a Full-Stack web application up to deployment, using commit messages to document the development process.|x|
 |5.2|Commit final code that is free of any passwords or security-sensitive information to the repository and the hosting platform||
 |6.1|Deploy a final version of the Full-Stack application code to a cloud-based hosting platform and test to ensure it matches the development version||
 |6.2|Ensure that the final deployed code is free of commented out code and has no broken internal links||
