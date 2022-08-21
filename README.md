@@ -7,7 +7,27 @@
 - pip3 install gunicorn
 - pip3 install Pillow
 
+## User Stories
+---
+
+### Admin
+
+- As an Admin I want to create, read, update and delete posts so that I can manage my blog content
+- As an Admin I want to create draft posts so that I can take more time to create content.
+
+### User
+
+- As a site User I want to view comments on the article so I can read the conversation and get more knowledge
+- As a Site User I want to register an account so that I can comment
+- As a Site User I want to leave a comment on a post so that I can be involved in a conversation
+
+### Visitor
+
+- As a visitior I want to see a list of posts so that I can select the post I would like to read.
+- As a visitor I want to click on a post so that I can read the full content as see all the information
+
 ## Issues
+---
 
 As the emails are not sent using a local SMTP server but instead a google account there may be some issues. 
 Google sometimes blocks the ability to log into google with a 3rd part application, as a fallback emails will be logged to the console.
@@ -31,7 +51,7 @@ Google sometimes blocks the ability to log into google with a 3rd part applicati
 |1.13|Document the UX design work undertaken for this project, including any wireframes, mockups, diagrams, etc.,created as part of the design process and its reasoning. Include diagrams created as part of the design process and demonstrate that these have been followed through to implementation||
 |2.1|Develop the model into a usable database where data is stored in a consistent and well-organised manner.|x|
 |2.2|Create functionality for users to create, locate, display, edit and delete records||
-|2.3|All changes to the data should be notified to relevant user||
+|2.3|All changes to the data should be notified to relevant user|x|
 |2.4|Implement at least one form, with validation, that allows users to create and edit models in the backend||
 |3.1|Apply role-based login and registration functionality|x|
 |3.2|The current login state is reflected to the user|x|

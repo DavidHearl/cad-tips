@@ -1,7 +1,39 @@
-body { 
-    margin:0;
-    padding:0;
-    font-family:helvetica, sans-serif;
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(15, 19, 25);
+    color: #ddd;
+}
+
+/* Global */
+.center{
+    text-align: center;
+}
+
+.alert{
+    text-align: center;
+}
+
+.label{
+    margin: 40px 0;
+}
+
+/* ----- Navigation ----- */
+
+.navbar-dark .navbar-toggler{
+    border: none;
+}
+
+.navbar{
+    background-color: rgb(10,15,20);
+    border-bottom: 1px solid rgb(50,55,60);
+}
+
+.nav-link{
+    color: #fff;
+}
+
+.navbar-collapse{
+    flex-grow: 0;
 }
 
 .post-preview {
@@ -17,10 +49,6 @@ body {
 a { 
     color:black;
     text-decoration:none; 
-}
-
-h1 { 
-    border-bottom:1px solid #bbb;
 }
 
 h2 {
