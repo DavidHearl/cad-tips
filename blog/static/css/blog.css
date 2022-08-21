@@ -62,6 +62,19 @@ p.date {
 
 /* Extra */
 
+ul.dropdown-menu {
+    background-color: rgb(20, 24, 30);
+    border: 1px solid rgb(50,55,60);
+}
+
+a.dropdown-item {
+    color: #ddd;
+}
+
+hr.dropdown-divider {
+    color: pink;
+}
+
 .account-heading {
     font-size: 26px;
 }
