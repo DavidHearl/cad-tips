@@ -10,14 +10,13 @@
     <p class="date">
         Published {{ post.publish }} by {{ post.author }}
     </p>
-    {{ post.body|linebreaks }}
+    {{ post.body|linebreaks|safe }}
     <hr>
     <p>
         <a href="{% url 'blog:post_share' post.id %}">
             Share Post
         </a>
     </p>
-
     {% with comments.count as total_comments %}
         <h2 class="comment-title">
             <i class="far fa-comments"></i>
@@ -30,7 +29,7 @@
         <div class="comment">
             <p class="info">
                 {{ comment.name }} - {{ comment.created }}
-                <button href="{% url 'blog:delete' comment.id %}">Delete</button>
+                <button class="btn btn-sm btn-danger" href="">Delete</button>
             </p>
             {{ comment.body|linebreaks }}
         </div>

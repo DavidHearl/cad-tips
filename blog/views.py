@@ -61,9 +61,9 @@ def post_share(request, post_id):
     sent = False
 
     if request.method == 'POST':
-        form = EmailPostForm(request.POST)
+        share_form = EmailPostForm(request.POST)
         if form.is_valid():
-            cd = form.cleaned_data
+            cd = share_form.cleaned_data
             post_url = request.build_absolute_uri(post.get_absolute_url())
             subject = f"{cd['name']} recommends you read {post.title}"
             message = f"Read {post.title} at {post_url}\n\n" \
@@ -71,11 +71,11 @@ def post_share(request, post_id):
             send_mail(subject, message, 'admin@myblog.com', [cd['to']])
             sent = True
     else:
-        form = EmailPostForm()
+        share_form = EmailPostForm()
 
     context = {
         'post': post,
-        'form': form,
+        'share_form': share_form,
         'sent': sent
     }
 

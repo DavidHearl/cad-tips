@@ -1,12 +1,15 @@
-## Requirements
+# Inventor Blog - [Live Website](https://cad-tips.herokuapp.com/)
 
-- pip3 install django
-- pip3 install dj_database_url
-- pip3 install psycopg2-binary
-- pip3 install dj3-cloudinary-storage
-- pip3 install gunicorn
-- pip3 install Pillow
-- pip3 install django-summernote
+https://github.com/DavidHearl/cad-tips
+
+Multi Device Layout will go here
+https://techsini.com/multi-mockup/index.php
+
+## About
+---
+
+CAD Tips is a fully responsive blog where users can come to learn how to use Autodesk Inventor.
+The user will find helpful posts and examples which they can complete to increase their skill!
 
 ## User Stories
 ---
@@ -30,6 +33,17 @@
 - As a visitor I want to see a list of posts so that I can select the post I would like to read.
 - As a visitor I want to click on a post so that I can read the full content as see all the information.
 - As a visitor I want to be able to share a post so that I can share content with with friends & colleagues.
+
+## Agile Development Tool
+---
+
+For the agile methodology I used the GitHub canban board 
+
+![Canban](./media/Readme/Canban%20Board.PNG)
+
+## Design
+
+
 
 ## Issues
 ---
@@ -71,3 +85,14 @@ Google sometimes blocks the ability to log into google with a 3rd part applicati
 |6.3|Document the deployment process in a README file in English||
 |6.4|Ensure the security of the deployed version, making sure to not include any passwords in the git repository, that all secret keys are hidden in environment variables or in files that are in .gitignore, and that DEBUG mode is turned off||
 |7.1|Design a custom data model that fits the purpose of the project||
+
+
+## Requirements
+
+- pip3 install django
+- pip3 install dj_database_url
+- pip3 install psycopg2-binary
+- pip3 install dj3-cloudinary-storage
+- pip3 install gunicorn
+- pip3 install Pillow
+- pip3 install django-summernote
