@@ -11,5 +11,5 @@ urlpatterns = [
     path('<int:post_id>/share/', views.post_share, name='post_share'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('register/', views.register, name='register'),
-    path('edit/', views.edit, name='edit'),
+    path('edit_profile/', views.edit_profile, name='edit_profile'),
 ]

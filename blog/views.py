@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -9,7 +9,7 @@ from django.core.mail import send_mail
 from django.urls import is_valid_path
 
 from .forms import EmailPostForm, CommentForm, LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
-from .models import Post, Comment ,Profile
+from .models import Post, Comment, Profile
 
 
 def post_list(request):
@@ -27,7 +27,6 @@ def post_list(request):
         'page': page,
         'posts': posts
     }
-
     return render(request, 'blog/list.html', context)
 
 
@@ -53,7 +52,7 @@ def post_detail(request, year, month, day, post):
         'comment_form': comment_form
     }
 
-    return render(request, 'blog/detail.html', context)
+    return render(request, 'blog/detail.html', context)    
 
 
 def post_share(request, post_id):
@@ -102,14 +101,6 @@ def user_login(request):
     return render(request, 'account/login.html', {'form': form})
 
 
-def create(request):
-    return render(request, 'blog/create_post.html')
-
-
-def my_posts(request):
-    return render(request, 'blog/my_posts.html')
-
-
 def register(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
@@ -125,7 +116,7 @@ def register(request):
 
 
 @login_required
-def edit(request):
+def edit_profile(request):
     if request.method == 'POST':
         user_form = UserEditForm(instance=request.user,
                                  data=request.POST)
@@ -142,7 +133,10 @@ def edit(request):
     else:
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)
-    return render(request, 'account/edit.html', {'user_form': user_form,'profile_form': profile_form})
+    return render(request, 'account/edit_profile.html', {'user_form': user_form,'profile_form': profile_form})
+
+
+
 
 
 @login_required

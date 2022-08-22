@@ -139,7 +139,7 @@ h2 {
     background-color: rgb(50,55,60) ;
     margin-bottom: 15px;
     padding: 0;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 p.body, .comment > p {
