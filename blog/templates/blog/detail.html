@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
@@ -42,7 +44,7 @@
     {% else %}
         {% if user.is_authenticated %}
         <form class="add-comment-form" method="post">
-            {{ comment_form.as_p }}
+            {{ comment_form | crispy }}
             {% csrf_token %}
             <input class="add-comment" type="submit" value="Add comment">
         </form>

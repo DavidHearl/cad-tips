@@ -102,6 +102,14 @@ def user_login(request):
     return render(request, 'account/login.html', {'form': form})
 
 
+def create(request):
+    return render(request, 'blog/create_post.html')
+
+
+def my_posts(request):
+    return render(request, 'blog/my_posts.html')
+
+
 def register(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
