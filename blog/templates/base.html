@@ -33,8 +33,6 @@
                                 <span>Hi {{ user.username }}!</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{% url 'blog:create' %}">Create Post</a></li>
-                                <li><a class="dropdown-item" href="{% url 'blog:my_posts' %}">My Posts</a></li>
                                 <li><a class="dropdown-item" href="{% url 'blog:dashboard' %}">My dashboard</a></li>
                                 <li><a class="dropdown-item" href="{% url 'blog:edit' %}">Edit your Profile</a></li>
                                 <li>
