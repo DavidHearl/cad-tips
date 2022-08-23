@@ -34,6 +34,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-davidhearl-cadtips-63y5err36lu.ws-eu62.gitpod.io']
 
 # Application definition
 

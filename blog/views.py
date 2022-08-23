@@ -1,6 +1,5 @@
-from audioop import reverse
 from django.http import Http404, HttpResponse
-from django.shortcuts import redirect, render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404, reverse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -60,7 +59,8 @@ def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, pk=comment_id)
     comment.delete()
 
-    return redirect(reverse, 'delete_comment')
+    return redirect('post_list')
+
 
 
 def post_share(request, post_id):
