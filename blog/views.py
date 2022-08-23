@@ -1,4 +1,5 @@
-from django.http import HttpResponse
+from audioop import reverse
+from django.http import Http404, HttpResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
@@ -6,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.mail import send_mail
-from django.urls import is_valid_path
+from django.urls import is_valid_path, reverse_lazy
 
 from .forms import EmailPostForm, CommentForm, LoginForm, UserRegistrationForm, UserEditForm, ProfileEditForm
 from .models import Post, Comment, Profile
@@ -55,13 +56,20 @@ def post_detail(request, year, month, day, post):
     return render(request, 'blog/detail.html', context)    
 
 
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+
+    return redirect(reverse, 'delete_comment')
+
+
 def post_share(request, post_id):
     post = get_object_or_404(Post, id=post_id, status='published')
     sent = False
 
     if request.method == 'POST':
         share_form = EmailPostForm(request.POST)
-        if form.is_valid():
+        if share_form.is_valid():
             cd = share_form.cleaned_data
             post_url = request.build_absolute_uri(post.get_absolute_url())
             subject = f"{cd['name']} recommends you read {post.title}"
@@ -134,9 +142,6 @@ def edit_profile(request):
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)
     return render(request, 'account/edit_profile.html', {'user_form': user_form,'profile_form': profile_form})
-
-
-
 
 
 @login_required
