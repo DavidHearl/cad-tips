@@ -41,6 +41,14 @@ For the agile methodology I used the GitHub canban board
 
 ![Canban](./media/Readme/Canban%20Board.PNG)
 
+
+![Post Detail - Desktop](./media/Readme/Post%20Detail%20-%20Desktop.png)
+![Post Detail - Tablet](./media/Readme/Post%20List%20-%20Tablet.png)
+![Post Detail - iPhone](./media/Readme/Post%20Detail%20-%20iPhone.png)
+![Post List - Desktop](./media/Readme/Post%20List%20-%20Desktop.png)
+![Post List - Tablet](./media/Readme/Post%20List%20-%20Tablet.png)
+![Post List - iPhone](./media/Readme/Post%20List%20-%20iPhone.png)
+
 ## Design
 
 
