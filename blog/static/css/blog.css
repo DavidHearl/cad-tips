@@ -175,3 +175,10 @@ p.info {
 
 li{color: white;}
 
+img {
+    width: 100% !important; 
+}
+
+.post-title {
+    display: inline-block;
+}

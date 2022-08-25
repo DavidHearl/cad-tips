@@ -30,7 +30,7 @@ def post_list(request):
     return render(request, 'blog/list.html', context)
 
 
-def post_detail(request, year, month, day, post):
+def post_detail(request, year, month, day, post, ):
     post = get_object_or_404(Post, slug=post, status='published', publish__year=year, publish__month=month, publish__day=day)
     comments = post.comments.filter(active=True)
     comment_form = None
@@ -115,15 +115,17 @@ def register(request):
     return render(request, 'account/register.html', {'user_form': user_form})
 
 
-def like(self, request, slug):
+def post_like(self, request, slug):
     post = get_object_or_404(Post, slug=slug)
+    post.liked.add(request.user)
 
-    if post.liked.filter(id=request.user.id).exists():
-        post.liked.remove(request.user)
-    else:
-        post.liked.add(request.user)
+    # if post.liked.filter(id=request.user.id).exists():
+    #     post.liked.remove(request.user)
+    # else:
+    #     post.liked.add(request.user)
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+    # return HttpResponseRedirect(reverse('post_detail', args=[str(pk)]))
 
 
 @login_required

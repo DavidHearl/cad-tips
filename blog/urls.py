@@ -13,5 +13,5 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('edit_profile/', views.edit_profile, name='edit_profile'),
     path('delete_comment/<int:comment_id>/', views.delete_comment, name='delete_comment'),
-    path('like/<slug:slug>', views.like, name='post_like')
+    path('like/<slug:slug>', views.post_like, name='post_like')
 ]
