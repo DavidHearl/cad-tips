@@ -1,4 +1,4 @@
-from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render, get_object_or_404, reverse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
@@ -115,6 +115,17 @@ def register(request):
     return render(request, 'account/register.html', {'user_form': user_form})
 
 
+def like(self, request, slug):
+    post = get_object_or_404(Post, slug=slug)
+
+    if post.liked.filter(id=request.user.id).exists():
+        post.liked.remove(request.user)
+    else:
+        post.liked.add(request.user)
+
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
 @login_required
 def delete_comment(request, comment_id):
     """ Function to delete comments when the user is signed in"""
@@ -129,7 +140,7 @@ def delete_comment(request, comment_id):
     comment.delete()
     messages.success(request, f"Your comment has been removed")
 
-    # return redirect('post_list')
+    return redirect('post_list')
 
 
 @login_required

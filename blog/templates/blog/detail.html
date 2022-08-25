@@ -25,7 +25,22 @@
     {% endwith %}
 
     <!-- Post Likes -->
-    <i class="far fa-heart">{{ post.number_of_liked }}</i>
+    {% if user.is_authenticated %}
+    <form action="{% url 'blog:post_like' post.slug %}" class="d-line" method="POST"></form>
+        {% csrf_token %}
+        {% if liked %}
+            <button type="submit" name="blogpost_id" value="{{ post.slug }}">
+                <i class="fas fa-heart"></i>
+            </button>
+        {% else %}
+            <button type="submit" name="blogpost_id" value="{{ post.slug }}">
+                <i class="far fa-heart"></i>
+            </button>
+        {% endif %}
+    {% else %}
+        <i class="far fa-heart">
+    {% endif %}
+    <span>{{ post.number_of_liked }}</span>
 
     <!-- Lists comments on a post -->
     {% for comment in comments %}

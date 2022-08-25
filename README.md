@@ -105,3 +105,4 @@ Google sometimes blocks the ability to log into google with a 3rd part applicati
 - pip3 install Pillow
 - pip3 install django-summernote
 - pip3 install django-crispy-forms
+- pip3 install django-allauth

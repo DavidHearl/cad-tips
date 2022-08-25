@@ -11,8 +11,10 @@
 		<p>Please sign in to your account</p>
 
 		{% if form.errors %}
-			<p>Your username and password didn't match.</p>
-			<p>Please try again.</p>
+			<div class="alert alert-success" role="alert">
+				<p>Your username and password didn't match.</p>
+				<p>Please try again.</p>
+			</div>
 		{% endif %}
 
 		<div class="login-form my-4">
