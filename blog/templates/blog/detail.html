@@ -5,12 +5,12 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
+    <!-- Post Content -->
     <h1>{{ post.title }}</h1>
     <hr>
-    <p class="date">
-        Published {{ post.publish }} by {{ post.author }}
-    </p>
-    {{ post.content|linebreaks|safe }}
+    <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
+    <img src="{{ post.featured_image.url }}" alt="">
+    <p>{{ post.content | safe }}</p>
     <hr>
     <p>
         <a href="{% url 'blog:post_share' post.id %}">
@@ -23,6 +23,9 @@
             {{ total_comments }} Comment{{ total_comments|pluralize }}
         </h2>
     {% endwith %}
+
+    <!-- Post Likes -->
+    <i class="far fa-heart">{{ post.number_of_liked }}</i>
 
     <!-- Lists comments on a post -->
     {% for comment in comments %}
