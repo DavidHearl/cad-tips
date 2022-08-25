@@ -9,7 +9,15 @@
     <h1>{{ post.title }}</h1>
     <hr>
     <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
-    <img src="{{ post.featured_image.url }}" alt="">
+
+    {% if "" in post.featured_image.url %}
+    
+    {% else %}
+    <img src=" {{ post.featured_image.url }}" width="100%">
+    {% endif %}
+
+
+
     <p>{{ post.content | safe }}</p>
     <hr>
     <p>
@@ -17,30 +25,14 @@
             Share Post
         </a>
     </p>
+
+    <!-- Post Comments -->
     {% with comments.count as total_comments %}
         <h2 class="comment-title">
             <i class="far fa-comments"></i>
             {{ total_comments }} Comment{{ total_comments|pluralize }}
         </h2>
     {% endwith %}
-
-    <!-- Post Likes -->
-    {% if user.is_authenticated %}
-    <form action="{% url 'blog:post_like' post.id %}" class="d-line" method="POST"></form>
-        {% csrf_token %}
-        {% if liked %}
-            <button type="submit" name="post_id" value="{{ post.slug }}">
-                <i class="fas fa-heart"></i>
-            </button>
-        {% else %}
-            <button type="submit" name="post_id" value="{{ post.slug }}">
-                <i class="far fa-heart"></i>
-            </button>
-        {% endif %}
-    {% else %}
-        <i class="far fa-heart">
-    {% endif %}
-    <span>{{ post.number_of_likes }}</span>
 
     <!-- Lists comments on a post -->
     {% for comment in comments %}

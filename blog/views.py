@@ -115,19 +115,6 @@ def register(request):
     return render(request, 'account/register.html', {'user_form': user_form})
 
 
-def post_like(self, request, slug):
-    post = get_object_or_404(Post, slug=slug)
-    post.liked.add(request.user)
-
-    # if post.liked.filter(id=request.user.id).exists():
-    #     post.liked.remove(request.user)
-    # else:
-    #     post.liked.add(request.user)
-
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-    # return HttpResponseRedirect(reverse('post_detail', args=[str(pk)]))
-
-
 @login_required
 def delete_comment(request, comment_id):
     """ Function to delete comments when the user is signed in"""
@@ -137,12 +124,12 @@ def delete_comment(request, comment_id):
 
     # if logged_user is not author:
     #     message.warning(request, f'You did not create this comment')
-    #     return redirect('post_list')
+    #     return redirect('blog:post_list')
 
     comment.delete()
     messages.success(request, f"Your comment has been removed")
 
-    return redirect('post_list')
+    return redirect(reverse('blog:post_list'))
 
 
 @login_required

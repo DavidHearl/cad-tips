@@ -176,9 +176,16 @@ p.info {
 li{color: white;}
 
 img {
-    width: 100% !important; 
+    max-width: 100% !important;
 }
 
 .post-title {
     display: inline-block;
+}
+
+.like-button {
+    background: none;
+    color: white;
+    border: none;
+    width: 18px;
 }
