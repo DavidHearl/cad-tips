@@ -55,14 +55,6 @@ def post_detail(request, year, month, day, post):
     return render(request, 'blog/detail.html', context)    
 
 
-def delete_comment(request, comment_id):
-    comment = get_object_or_404(Comment, pk=comment_id)
-    comment.delete()
-
-    return redirect('post_list')
-
-
-
 def post_share(request, post_id):
     post = get_object_or_404(Post, id=post_id, status='published')
     sent = False
@@ -121,6 +113,23 @@ def register(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, 'account/register.html', {'user_form': user_form})
+
+
+@login_required
+def delete_comment(request, comment_id):
+    """ Function to delete comments when the user is signed in"""
+    comment = get_object_or_404(Comment, pk=comment_id)
+    logged_user = request.user.id
+    # author = query.author.id
+
+    # if logged_user is not author:
+    #     message.warning(request, f'You did not create this comment')
+    #     return redirect('post_list')
+
+    comment.delete()
+    messages.success(request, f"Your comment has been removed")
+
+    # return redirect('post_list')
 
 
 @login_required

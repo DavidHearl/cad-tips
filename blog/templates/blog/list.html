@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <!-- <h5 class="card-title">Special title treatment</h5> -->
                     <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
-                    <p class="card-text">{{ post.body|truncatewords:30|linebreaks }}</p>
+                    <p class="card-text">{{ post.content|truncatewords:30|linebreaks }}</p>
                     <a href="{{ post.get_absolute_url }}" class="btn btn-primary btn-sm">Read Article</a>
                 </div>
             </div>         

@@ -10,7 +10,7 @@
     <p class="date">
         Published {{ post.publish }} by {{ post.author }}
     </p>
-    {{ post.body|linebreaks|safe }}
+    {{ post.content|linebreaks|safe }}
     <hr>
     <p>
         <a href="{% url 'blog:post_share' post.id %}">
@@ -33,7 +33,7 @@
                     <a href="{% url 'blog:delete_comment' comment.id %}">Delete</a>
                 </button>
             </p>
-            {{ comment.body|linebreaks }}
+            {{ comment.content|linebreaks }}
         </div>
     {% empty %}
         <p>There are no comments yet.</p>

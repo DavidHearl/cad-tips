@@ -6,10 +6,10 @@ from .models import Post, Comment, Profile
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('body')
+    summernote_fields = ('content')
     list_display = ('title', 'slug', 'author', 'publish', 'status')
     list_filter = ('status', 'created', 'publish', 'author')
-    search_fields = ('title', 'body')
+    search_fields = ('title', 'content')
     raw_id_fields = ('author',)
     date_hierarchy = 'publish'
     ordering= ('status', 'publish')
@@ -19,7 +19,7 @@ class PostAdmin(SummernoteModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'post', 'created', 'active')
     list_filter = ('active', 'created', 'updated')
-    search_fields = ('name', 'email', 'body')
+    search_fields = ('name', 'email', 'content')
 
 
 @admin.register(Profile)

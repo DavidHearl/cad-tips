@@ -75,7 +75,7 @@ Google sometimes blocks the ability to log into google with a 3rd part applicati
 |1.10|Write code that meets minimum standards for readability (comments, indentation, consistent and meaningful naming conventions).|x|
 |1.11|Name files consistently and descriptively, without spaces or capitalisation to allow for cross-platform compatibility.|x|
 |1.12|Document and implement all User Stories within the Agile tool and map them to the project goals|x|
-|1.13|Document the UX design work undertaken for this project, including any wireframes, mockups, diagrams, etc.,created as part of the design process and its reasoning. Include diagrams created as part of the design process and demonstrate that these have been followed through to implementation||
+|1.13|Document the UX design work undertaken for this project, including any wireframes, mockups, diagrams, etc.,created as part of the design process and its reasoning. Include diagrams created as part of the design process and demonstrate that these have been followed through to implementation|x|
 |2.1|Develop the model into a usable database where data is stored in a consistent and well-organised manner.|x|
 |2.2|Create functionality for users to create, locate, display, edit and delete records||
 |2.3|All changes to the data should be notified to relevant user|x|
