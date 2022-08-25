@@ -1,4 +1,4 @@
-asgiref==3.5.0
+asgiref==3.5.2
 black==22.3.0
 click==8.1.2
 cloudinary==1.29.0
