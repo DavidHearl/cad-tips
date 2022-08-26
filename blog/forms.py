@@ -45,4 +45,6 @@ class ProfileEditForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields =('name', 'email', 'content', 'username')
+        fields =('name', 'email', 'content')
+
+# Username removed from fields
