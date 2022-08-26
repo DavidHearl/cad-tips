@@ -48,9 +48,9 @@
                             </ul>
                         </li>
                         {% else %}
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" name="login">
                             <a href="{% url 'blog:login' %}" class="nav-link" id="navbarDropdown" role="button"
-                                aria-expanded="false" name="login">Login/Register</a>
+                                aria-expanded="false">Login/Register</a>
                         </li>
                         {% endif %}
                     </ul>
