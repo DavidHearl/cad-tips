@@ -9,22 +9,14 @@
     <h1>{{ post.title }}</h1>
     <hr>
     <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
-
-    {% if "" in post.featured_image.url %}
+    {% if "placeholder" in post.featured_image.url %}
     
     {% else %}
     <img src=" {{ post.featured_image.url }}" width="100%">
     {% endif %}
-
-
-
     <p>{{ post.content | safe }}</p>
     <hr>
-    <p>
-        <a href="{% url 'blog:post_share' post.id %}">
-            Share Post
-        </a>
-    </p>
+    <p><a href="{% url 'blog:post_share' post.id %}">Share Post</a></p>
 
     <!-- Post Comments -->
     {% with comments.count as total_comments %}
@@ -39,9 +31,11 @@
         <div class="comment">
             <p class="info">
                 {{ comment.name }} - {{ comment.created }}
-                <button class="btn btn-sm btn-danger">
-                    <a href="{% url 'blog:delete_comment' comment.id %}">Delete</a>
-                </button>
+                {% if request.user.id == comment.username.id %}
+                    <button class="btn btn-sm btn-danger">
+                        <a href="{% url 'blog:delete_comment' comment.id %}">Delete</a>
+                    </button>
+                {% endif %}
             </p>
             {{ comment.content|linebreaks }}
         </div>

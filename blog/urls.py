@@ -13,4 +13,7 @@ urlpatterns = [
     path('delete_comment/<int:comment_id>/', views.delete_comment, name='delete_comment'),
     path('<int:year>/<int:month>/<int:day>/<slug:post>/', views.post_detail, name='post_detail'),
     path('<int:post_id>/share/', views.post_share, name='post_share'),
+    path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_change_done'),
+    # path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
+    # path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(),  name='password_change_done'),
 ]

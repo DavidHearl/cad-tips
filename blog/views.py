@@ -120,11 +120,6 @@ def delete_comment(request, comment_id):
     """ Function to delete comments when the user is signed in"""
     comment = get_object_or_404(Comment, pk=comment_id)
     logged_user = request.user.id
-    # author = query.author.id
-
-    # if logged_user is not author:
-    #     message.warning(request, f'You did not create this comment')
-    #     return redirect('blog:post_list')
 
     comment.delete()
     messages.success(request, f"Your comment has been removed")

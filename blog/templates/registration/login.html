@@ -10,13 +10,6 @@
 		<h1 class="account-heading">Welcome Back !</h1>
 		<p>Please sign in to your account</p>
 
-		{% if form.errors %}
-			<div class="alert alert-success" role="alert">
-				<p>Your username and password didn't match.</p>
-				<p>Please try again.</p>
-			</div>
-		{% endif %}
-
 		<div class="login-form my-4">
 			<form action="{% url 'blog:login' %}" method="post">
 				{{ form | crispy }}
