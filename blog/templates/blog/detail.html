@@ -32,7 +32,7 @@
             <p class="info">
                 {{ comment.name }} - {{ comment.created }}
                 {% if request.user.id == comment.username.id %}
-                    <button class="btn btn-sm btn-danger">
+                    <button class="btn btn-sm btn-danger delete-comment">
                         <a href="{% url 'blog:delete_comment' comment.id %}">Delete</a>
                     </button>
                 {% endif %}

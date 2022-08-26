@@ -25,8 +25,8 @@ The user will find helpful posts and examples which they can complete to increas
 - As a site User I want to view comments on the article so I can read the conversation and get more knowledge.
 - As a Site User I want to register an account so that I can comment.
 - As a Site User I want to leave a comment on a post so that I can be involved in a conversation.
+- As a Site User I want to delete my comment so that I can remove any errors that I have made
 - As a site User I want to be able to update my profile information so that my details stay correct.
-- As a Site User I want to see the number of comments on each post so that I can see which artile has the most engagement.
 
 ### Visitor
 
@@ -37,13 +37,22 @@ The user will find helpful posts and examples which they can complete to increas
 ## Agile Development Tool
 ---
 
-For the agile methodology I used the GitHub canban board 
+For the agile methodology I used the GitHub canban board, it was here where I created the user stories, first as a draft then progressed the items to issues in the to do column. You can see a snap shot below.
+![Canban_Preview](./media/Readme/Canban%20Board%20In%20Progress.PNG)
 
-![Canban](./media/Readme/Canban%20Board.PNG)
+When I wanted to start working on a feature, I moved the issue from the 'todo' list to the 'in progress' list. Once the task was completed it was moved in to the completed list.
+
+Below is a snapshot of the completed canban board.
+
+![Canban_Done](./media/Readme/Canban%20Board%20Completed.png)
+
+
+
+
 
 
 ![Post Detail - Desktop](./media/Readme/Post%20Detail%20-%20Desktop.png)
-![Post Detail - Tablet](./media/Readme/Post%20List%20-%20Tablet.png)
+![Post Detail - Tablet](./media/Readme/Post%20Detail%20-%20Tablet.png)
 ![Post Detail - iPhone](./media/Readme/Post%20Detail%20-%20iPhone.png)
 ![Post List - Desktop](./media/Readme/Post%20List%20-%20Desktop.png)
 ![Post List - Tablet](./media/Readme/Post%20List%20-%20Tablet.png)
@@ -68,7 +77,7 @@ Google sometimes blocks the ability to log into google with a 3rd part applicati
 |1.3|Build a database-backed MVC web application that allows users to store and manipulate data records about a particular domain.|x|
 |1.4|Design a database structure relevant for your domain, consisting of a minimum of one custom model.|x|
 |1.5|Use an Agile tool to manage the planning and implementation of all significant functionality|x|
-|1.6|Document and implement all User Stories and map them to the project within an Agile tool||
+|1.6|Document and implement all User Stories and map them to the project within an Agile tool|x|
 |1.7|Write Python code that is consistent in style and conforms to the PEP8 style guide and validated HTML and CSS code.||
 |1.8|Include sufficient custom Python logic to demonstrate your proficiency in the language|x|
 |1.9|Include functions with compound statements such as if conditions and/or loops in your Python code|x|

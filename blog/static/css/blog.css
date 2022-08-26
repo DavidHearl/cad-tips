@@ -96,6 +96,7 @@ hr.dropdown-divider {
     border: 1px solid rgb(50,55,60);
     background-color: rgb(10,15,20);
     padding-left: 8px;
+    margin-bottom: 12px;
     color: #ddd;
 }
 
@@ -188,4 +189,30 @@ img {
     color: white;
     border: none;
     width: 18px;
+}
+
+.alert {
+    margin: 16px;
+}
+
+#msg {
+        margin: 24px 0 0 0;
+    }
+
+.delete-comment {
+    float: right;
+    margin-top: 10px;
+    margin-right: 4px;
+}
+
+.delete-comment>a{
+    color: white;
+}
+
+.dropdown-divider {
+    background: rgb(106, 106, 106);
+}
+
+label {
+    margin: 0 0 2px 8px;
 }

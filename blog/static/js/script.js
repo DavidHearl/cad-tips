@@ -4,4 +4,4 @@ setTimeout(function () {
     alert.close();
 }, 5000);
 
-document.getElementsByClassName('card-body')
+
