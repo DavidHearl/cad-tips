@@ -35,7 +35,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-davidhearl-cadtips-b2u1iwxvfxt.ws-eu63.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['*']
 
 # Application definition
 
@@ -168,4 +168,3 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGIN_REDIRECT_URL = 'blog:dashboard'
 LOGIN_URL = 'blog:login'
 LOGOUT_URL = 'blog:logout'
-

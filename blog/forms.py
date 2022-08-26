@@ -17,7 +17,8 @@ class EmailPostForm(forms.Form):
 
 class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Repeat Password', widget=forms.PasswordInput)
+    password2 = forms.CharField(
+        label='Repeat Password', widget=forms.PasswordInput)
 
     class Meta:
         model = User
@@ -45,6 +46,4 @@ class ProfileEditForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields =('name', 'email', 'content')
-
-# Username removed from fields
+        fields = ('name', 'email', 'content')

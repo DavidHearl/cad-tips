@@ -46,6 +46,19 @@ Below is a snapshot of the completed canban board.
 
 ![Canban_Done](./media/Readme/Canban%20Board%20Completed.png)
 
+## Code Validation
+
+All Python files passed PEP8 validation through http://pep8online.com. See below the list of files that have been validated.
+- blog/admin.py - Passed
+- blog/apps.py - Passed
+- blog/forms.py - Passed
+- blog/models.py - Passed
+- blog/urls.py - Passed
+- blog/views.py - Passed
+- cad_tips/urls.py - Passed
+
+All HTML Templates passed HTML validation through
+
 
 
 
