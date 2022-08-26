@@ -4,7 +4,18 @@ body{
     color: #ddd;
 }
 
-/* ----- Navigation ----- */
+/* Text */
+
+a { 
+    color:rgb(57, 132, 218);
+    text-decoration:none; 
+}
+
+h2 {
+    font-weight:normal;
+}
+
+/* Navigation */
 
 .navbar-dark .navbar-toggler{
     border: none;
@@ -32,11 +43,6 @@ body{
     border: 1px solid rgb(100, 100, 100);
 }
 
-.post-title {
-    margin: 0;
-    font-size: 16px;
-}
-
 .card-header {
     padding-left: 12px;
     padding-bottom: 7px;
@@ -46,6 +52,13 @@ body{
 .card-body{
     padding: 12px;
     background-color: rgb(30, 34, 40);
+}
+
+
+.post-title {
+    margin: 0;
+    font-size: 16px;
+    display: inline-block;
 }
 
 p {
@@ -60,24 +73,54 @@ p.date {
     margin-bottom: 8px;
 }
 
-/* Extra */
+/* Comments */
 
-ul.dropdown-menu {
-    background-color: rgb(20, 24, 30);
-    border: 1px solid rgb(50,55,60);
+.comment-title {
+    font-size: 16px;
 }
 
-a.dropdown-item {
-    color: #ddd;
+.comment {
+    background-color: rgb(50,55,60) ;
+    margin-bottom: 15px;
+    padding: 0;
+    border-radius: 8px;
 }
 
-hr.dropdown-divider {
-    color: pink;
+p.body, .comment > p {
+    padding: 4px 8px;
+    margin: 0;
 }
 
-.account-heading {
-    font-size: 26px;
+.delete-comment {
+    float: right;
+    margin-top: 10px;
+    margin-right: 4px;
 }
+
+.delete-comment>a{
+    color: white;
+}
+
+.comment {
+    border: 1px solid black;
+    margin-bottom: 2px;
+}
+
+.add-comment {
+    width: 100%;
+    margin: 10px 0 50px 0;
+    background-color: #0d6efd;
+    padding: 4px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+}
+
+.add-comment-form {
+    padding: 0;
+}
+
+/* Crispy Form Fields */
 
 #id_username,
 #id_password,
@@ -100,8 +143,23 @@ hr.dropdown-divider {
     color: #ddd;
 }
 
-#file-upload-button {
+/* Extra */
+
+ul.dropdown-menu {
     background-color: rgb(20, 24, 30);
+    border: 1px solid rgb(50,55,60);
+}
+
+a.dropdown-item {
+    color: #ddd;
+}
+
+hr.dropdown-divider {
+    color: pink;
+}
+
+.account-heading {
+    font-size: 26px;
 }
 
 .general-button {
@@ -118,50 +176,6 @@ ul {
     list-style: none;
 }
 
-.comment {
-    border: 1px solid black;
-    margin-bottom: 2px;
-}
-
-a { 
-    color:rgb(57, 132, 218);
-    text-decoration:none; 
-}
-
-h2 {
-    font-weight:normal;
-}
-
-.comment-title {
-    font-size: 16px;
-}
-
-.comment {
-    background-color: rgb(50,55,60) ;
-    margin-bottom: 15px;
-    padding: 0;
-    border-radius: 8px;
-}
-
-p.body, .comment > p {
-    padding: 4px 8px;
-    margin: 0;
-}
-
-.add-comment {
-    width: 100%;
-    margin: 10px 0 50px 0;
-    background-color: #0d6efd;
-    padding: 4px;
-    border: none;
-    border-radius: 4px;
-    color: white;
-}
-
-.add-comment-form {
-    padding: 0;
-}
-
 p.info {
     color: rgb(150,155,160);
     font-style: italic;
@@ -174,21 +188,12 @@ p.info {
     list-style: disc;
 }
 
-li{color: white;}
+li{
+    color: white;
+}
 
 img {
     max-width: 100% !important;
-}
-
-.post-title {
-    display: inline-block;
-}
-
-.like-button {
-    background: none;
-    color: white;
-    border: none;
-    width: 18px;
 }
 
 .alert {
@@ -196,17 +201,7 @@ img {
 }
 
 #msg {
-        margin: 24px 0 0 0;
-    }
-
-.delete-comment {
-    float: right;
-    margin-top: 10px;
-    margin-right: 4px;
-}
-
-.delete-comment>a{
-    color: white;
+    margin: 24px 0 0 0;
 }
 
 .dropdown-divider {
@@ -215,4 +210,8 @@ img {
 
 label {
     margin: 0 0 2px 8px;
+}
+
+.step-links {
+    margin-left: 16px;
 }

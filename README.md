@@ -2,19 +2,11 @@
 
 https://github.com/DavidHearl/cad-tips
 
-Multi Device Layout will go here
-https://techsini.com/multi-mockup/index.php
-
 ## About
 ---
 
 CAD Tips is a fully responsive blog where users can come to learn how to use Autodesk Inventor.
 The user will find helpful posts and examples which they can complete to increase their skill!
-
-## Features
----
-
-
 
 ## User Stories
 ---
@@ -53,22 +45,6 @@ Below is a snapshot of the completed canban board.
 
 The user stories detailed above are aligned with the project goals. Which was to produce an informative blog that people could use to imporve their knowledge of 3D CAD.
 
-## Code Validation
---- 
-
-All Python files passed PEP8 validation through http://pep8online.com. See below the list of files that have been validated.
-- blog/admin.py - Passed
-- blog/apps.py - Passed
-- blog/forms.py - Passed
-- blog/models.py - Passed
-- blog/urls.py - Passed
-- blog/views.py - Passed
-- cad_tips/urls.py - Passed
-
-All HTML Templates passed HTML validation through https://validator.w3.org/
-All CSS Templates passed CSS validation through https://jigsaw.w3.org/css-validator/validator.html.en
-
-
 ## Design
 ---
 It was important for me to try and keep the styling consitent with the style found in Autodesk Inventor, the main application this blog is based off.
@@ -102,6 +78,77 @@ The aim of the post detail view was to keep the post as clear and concise as pos
 ![Post Detail - Tablet](./media/Readme/Post%20Detail%20-%20Tablet.png)
 ![Post Detail - iPhone](./media/Readme/Post%20Detail%20-%20iPhone.png)
 
+## Testing
+---
+### Code Validation
+--- 
+
+All Python files passed PEP8 validation through http://pep8online.com. See below the list of files that have been validated.
+- blog/admin.py - Passed
+- blog/apps.py - Passed
+- blog/forms.py - Passed
+- blog/models.py - Passed
+- blog/urls.py - Passed
+- blog/views.py - Passed
+- cad_tips/urls.py - Passed
+
+All HTML Templates passed HTML validation through https://validator.w3.org/
+All CSS Templates passed CSS validation through https://jigsaw.w3.org/css-validator/validator.html.en
+
+### Responsive Testing
+
+#### Post List : Desktop & Mobile
+
+![Post List - Desktop View](./media/Readme/Post%20List%20-%20Desktop%20View.png)
+![Post List - Mobile View](./media/Readme/Post%20List%20-%20Mobile%20View.png)
+
+#### Post Detail : Desktop & Mobile
+
+![Post Detail - Desktop View](./media/Readme/Post%20Detail%20-%20Desktop%20View.png)
+![Post Detail - Mobile View](./media/Readme/Post%20Detail%20-%20Mobile%20View.png)
+
+#### Comment : Desktop & Mobile
+
+![Comment - Desktop View](./media/Readme/Comment%20-%20Desktop%20View.png)
+![Comment - Mobile View](./media/Readme/Comment%20-%20Mobile%20View.png)
+
+### Testing Views
+
+For the views tests to be successful all the views need to return the correct pages. Manually testing each view, it can be observed that all views (listed below) all return the correct template.
+
+- Post List - Correct
+
+![Post List](./media/Readme/post_list.png)
+
+- Post Detail - Correct
+
+![Post Detail](./media/Readme/post_detail.png)
+
+- Post Share - Correct
+
+![Post Share](./media/Readme/post_share.png)
+
+- User Login - Correct
+
+![User Login](./media/Readme/user_login.png)
+
+- Register - Correct
+
+![Register](./media/Readme/register.png)
+
+- Delete Comment - Correct
+
+![Delete Comment](./media/Readme/delete_comment.png)
+
+- Edit Profile - Correct
+
+![Edit Profile](./media/Readme/edit_profile.png)
+
+- Dashboard - Correct
+
+![Dashboard](./media/Readme/dashboard.png)
+
+
 ## Issues
 ---
 
@@ -119,6 +166,7 @@ Google sometimes blocks the ability to log into google with a 3rd part applicati
 - Add a view to edit posts
 
 ## Pass Criteria
+---
 
 | Number | Marking Criteria | Met |
 |:-:|:----------|:---:|
@@ -131,7 +179,7 @@ Google sometimes blocks the ability to log into google with a 3rd part applicati
 |1.7|Write Python code that is consistent in style and conforms to the PEP8 style guide and validated HTML and CSS code.|x|
 |1.8|Include sufficient custom Python logic to demonstrate your proficiency in the language|x|
 |1.9|Include functions with compound statements such as if conditions and/or loops in your Python code|x|
-|1.10|Write code that meets minimum standards for readability (comments, indentation, consistent and meaningful naming conventions).||
+|1.10|Write code that meets minimum standards for readability (comments, indentation, consistent and meaningful naming conventions).|x|
 |1.11|Name files consistently and descriptively, without spaces or capitalisation to allow for cross-platform compatibility.|x|
 |1.12|Document and implement all User Stories within the Agile tool and map them to the project goals|x|
 |1.13|Document the UX design work undertaken for this project, including any wireframes, mockups, diagrams, etc.,created as part of the design process and its reasoning. Include diagrams created as part of the design process and demonstrate that these have been followed through to implementation|x|
@@ -142,9 +190,9 @@ Google sometimes blocks the ability to log into google with a 3rd part applicati
 |3.1|Apply role-based login and registration functionality|x|
 |3.2|The current login state is reflected to the user|x|
 |3.3|Users should not be permitted to access restricted content or functionality prior to role-based login.|x|
-|4.1|Design and implement manual and/or automated Python test procedures to assess functionality, usability, responsiveness and data management within the entire web application||
-|4.2|Design and implement manual and/or automated JavaScript test procedures to assess functionality,usability, responsiveness and data management within the entire web application||
-|4.3|Document all implemented testing in the README.||
+|4.1|Design and implement manual and/or automated Python test procedures to assess functionality, usability, responsiveness and data management within the entire web application|x|
+|4.2|Design and implement manual and/or automated JavaScript test procedures to assess functionality,usability, responsiveness and data management within the entire web application|x|
+|4.3|Document all implemented testing in the README.|x|
 |5.1|Use Git & GitHub for version control of a Full-Stack web application up to deployment, using commit messages to document the development process.|x|
 |5.2|Commit final code that is free of any passwords or security-sensitive information to the repository and the hosting platform|x|
 |6.1|Deploy a final version of the Full-Stack application code to a cloud-based hosting platform and test to ensure it matches the development version|x|
@@ -154,6 +202,7 @@ Google sometimes blocks the ability to log into google with a 3rd part applicati
 |7.1|Design a custom data model that fits the purpose of the project|x|
 
 ## Deployment
+---
 
 1. Login to Heroku and Create a New App
 2. Create a name for your app, It must be unique name (not just unique for your heroku projects)
@@ -182,6 +231,7 @@ Google sometimes blocks the ability to log into google with a 3rd part applicati
 19. Add and Commit as you normally would. Then to push to heroku use: 'git push heroku main' or to push to git hub 'git push origin main'
 
 ## Requirements
+---
 
 - pip3 install django
 - pip3 install dj_database_url
@@ -192,3 +242,12 @@ Google sometimes blocks the ability to log into google with a 3rd part applicati
 - pip3 install django-summernote
 - pip3 install django-crispy-forms
 - pip3 install django-allauth
+
+## Credits
+---
+
+This project was put together with the help of:
+
+- Code Institute - I think before I blog
+- Django 3 By Example - Antonio Mele
+- Code Institute Tutors (Most noteably Scott)
