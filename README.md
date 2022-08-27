@@ -95,6 +95,8 @@ All Python files passed PEP8 validation through http://pep8online.com. See below
 All HTML Templates passed HTML validation through https://validator.w3.org/
 All CSS Templates passed CSS validation through https://jigsaw.w3.org/css-validator/validator.html.en
 
+It should be noted that the CSS validation does highlight some errors, although they are all in the bootstrap file system.
+
 ### Responsive Testing
 
 #### Post List : Desktop & Mobile
@@ -148,6 +150,17 @@ For the views tests to be successful all the views need to return the correct pa
 
 ![Dashboard](./media/Readme/dashboard.png)
 
+### Testing Features
+
+New user can register - Passed
+User can login - Passed
+User can logout - Passed
+User can leave comment - Passed
+User can delete their own comment - Passed
+User cannot delete someone else's comment - Passed (Delete button does not appear)
+User can edit their profile information - Passed
+User can share post - Failed (See issue 1 in the section below)
+User can change their password - Failed (See issue 2 in the section below)
 
 ## Issues
 ---
